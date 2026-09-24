@@ -95,9 +95,9 @@ def get_dec_hex_palindrom(x):
     i, e = 0, 0
     max_value = -1
     while i <= x:
-        i+=1
+        i += 1
         while e <= x:
-            e+=1
+            e += 1
             current = i * e
             if set_saved.__contains__(current):
                 continue
@@ -111,7 +111,7 @@ def get_dec_hex_palindrom(x):
     return max_value
 
 
-def to_base(number:int, base:int)->str:
+def to_base(number: int, base: int) -> str:
     """
     :param number: Zahl im 10er-Syste,
     :param base: Zielsystem (maximal 36)
@@ -134,18 +134,19 @@ def to_base(number:int, base:int)->str:
     'GC0UY9'
     """
     all_chars = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-     'U', 'V', 'W', 'X', 'Y', 'Z')
-    if  2 < base > 36:
+                 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                 'U', 'V', 'W', 'X', 'Y', 'Z')
+    if 2 < base > 36:
         raise ValueError('base must be between 2 and 36')
     n = number
     str_out = ""
     while n != 0:
-        str_out += all_chars[n%base]
+        str_out += all_chars[n % base]
         n = n // base
 
     return str_out[::-1]
+
 
 def main():
     pass

@@ -37,6 +37,7 @@ def collatz_sequence(number: int) -> list[int]:
         list_c.append(n)
     return list_c
 
+
 def longest_collatz_sequence(n: int) -> tuple[int, int]:
     """
     :param number: Startzahl
@@ -56,7 +57,7 @@ def longest_collatz_sequence(n: int) -> tuple[int, int]:
     """
     start = -1
     length = -1
-    for i in range(1, n +1 ):
+    for i in range(1, n + 1):
         cur = collatz_sequence(i)
         if len(cur) > length:
             start = i
@@ -64,8 +65,9 @@ def longest_collatz_sequence(n: int) -> tuple[int, int]:
 
     return start, length
 
-#Bonus -> Frage: ...d man am Computer empirisch nicht beweisen können – warum eigentlich nicht:
-#Antwort: Sollte die Operation unendlich lange ansteigen wird der Prozess irgendwann kein Memory mehr haben um die liste
+
+# Bonus -> Frage: ...d man am Computer empirisch nicht beweisen können – warum eigentlich nicht:
+# Antwort: Sollte die Operation unendlich lange ansteigen wird der Prozess irgendwann kein Memory mehr haben um die liste
 # mit den immer mehr werdenden Zahlen zu speichern.
 # Bei zu großen p wird n immer weiter anwachsen
 
@@ -80,6 +82,7 @@ def collatz_sequence_b(number: int, p: int) -> list[int]:
     [2, 1]
     >>> collatz_sequence_b(3, 1)
     [3, 4, 2, 1]
+
     ___ >>> collatz_sequence(7, 5) -> Alles was über 3 hat führt leider zu einer Endlosschleife:
     -> Macht auch sein da die Zahl ab 5 mehr steigt als sinkt -> Endlosschleife
     -> Bei allen p werten die gerade sind wird das ergebniss immer ungerade sein also wird nie geteil -> Endlosschleife
@@ -96,7 +99,6 @@ def collatz_sequence_b(number: int, p: int) -> list[int]:
     return list_c
 
 
-    
 # -----------------------------------------------------------------------------------------------------------------------
 def main():
     pass
