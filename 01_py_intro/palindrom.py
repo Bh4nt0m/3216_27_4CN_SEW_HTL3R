@@ -111,11 +111,45 @@ def get_dec_hex_palindrom(x):
     return max_value
 
 
+def to_base(number:int, base:int)->str:
+    """
+    :param number: Zahl im 10er-Syste,
+    :param base: Zielsystem (maximal 36)
+    :return: Zahl im Zielsystem als String
+    >>> to_base(1234,16)
+    '4D2'
+    >>> to_base(10, 2)
+    '1010'
+    >>> to_base(255, 16)
+    'FF'
+    >>> to_base(35, 36)
+    'Z'
+    >>> to_base(1234, 16)
+    '4D2'
+    >>> to_base(123456, 16)
+    '1E240'
+    >>> to_base(1000000, 2)
+    '11110100001001000000'
+    >>> to_base(987654321, 36)
+    'GC0UY9'
+    """
+    all_chars = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+     'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+     'U', 'V', 'W', 'X', 'Y', 'Z')
+    if  2 < base > 36:
+        raise ValueError('base must be between 2 and 36')
+    n = number
+    str_out = ""
+    while n != 0:
+        str_out += all_chars[n%base]
+        n = n // base
+
+    return str_out[::-1]
 
 def main():
     pass
 
 
 if __name__ == "__main__":
-    get_dec_hex_palindrom(845548)
     main()
