@@ -2,6 +2,12 @@
 
 """
 
+"""
+    :param s:
+
+    :return:
+"""
+
 __author__ = "Clemens Zimmer"
 __example__ = "SEW4/01/B" #Gegenstand/Übungsblatt/Aufgabe(Kapitel)
 __date__ = "01.09.2026"
